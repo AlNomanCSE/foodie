@@ -1,1 +1,8 @@
-.main {}
+.main {
+    border-inline: .2px solid rgb(206, 206, 206);
+    max-width: 1350px;
+    margin: 0 auto;
+    min-height: calc(100vh - 139.5938px);
+    background-color: #D9EDBF;
+    
+}
