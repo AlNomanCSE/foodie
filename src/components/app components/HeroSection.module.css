@@ -35,11 +35,12 @@
     border-radius: 10px;
     background-color: rgba(184, 241, 109, 0.3);
     box-shadow: 2px -2px 10px rgb(201, 201, 6);
-    transition: transform .3s ease;
+    transition: all .3s ease;
 }
 
 .card:hover {
     transform: scale(1.1);
+    box-shadow: 2px -2px 10px rgb(13, 201, 6);
 }
 
 .card .image {
@@ -72,4 +73,75 @@
 
 .card>div>button:hover {
     box-shadow: 1px 2px 5px rgb(179, 179, 5);
+}
+
+@media screen and (width<768px) {
+    .cards {
+        grid-template-columns: 1fr;
+        margin: 0 auto;
+    }
+
+    .card {
+        max-width: 300px;
+    }
+
+    .card .image {
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+@media screen and (width<600px) {
+
+    .section_1 h1 {
+        font-size: 1.2rem;
+    }
+
+    .section_1 .div_1 {
+        max-width: 250px;
+    
+        margin: 0 auto;
+        padding: 2rem 0 1rem 0;
+
+    }
+        .section_1 p {
+            font-size: .9rem;
+        }
+
+    .cards {
+        grid-template-rows: repeat(4, 300px);
+        gap: 2rem 1rem;
+        padding: 2rem;
+    }
+
+    .card>div>div>h2 {
+        font-size: .6rem;
+    }
+
+    .card .image {
+        height: 200px;
+    }
+
+    .card>div {
+        padding: 1rem 1rem;
+    }
+
+    .card>div>div>h2 {
+        font-size: 1rem;
+    }
+
+    .card>div>div>p {
+        font-size: 14px;
+    }
+
+    .card>div>button {
+        font-weight: 500;
+    }
+
+    .card>div>button {
+        padding: .4rem .7rem;
+        letter-spacing: 0;
+    }
+
+
 }

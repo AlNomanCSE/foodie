@@ -5,6 +5,13 @@
     align-items: center;
     padding: 1rem 3rem;
     color: #2C7865;
-max-width: 1350px;
+    max-width: 1350px;
     margin: 0 auto;
+}
+
+@media screen and (width<600px) {
+    .footer {
+        font-size: .8rem;
+    }
+
 }
