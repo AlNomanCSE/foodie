@@ -1,0 +1,32 @@
+.about {
+    max-width: 1350px;
+    padding: 2rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    flex-direction: column;
+    gap: 2rem;
+    color: rgba(32, 85, 72, 1);
+    text-align: center;
+    background-color: rgba(120, 133, 129, 0.1);
+}
+
+
+.about p {
+    color: rgba(32, 85, 72, .6);
+}
+
+@media screen and (width<600px) {
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .about p {
+        font-size: .9rem;
+    }
+
+    .about div h4,
+    .about div h3 {
+        font-size: 1rem;
+    }
+}

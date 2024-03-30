@@ -42,14 +42,14 @@
     text-transform: capitalize;
     font-weight: 600;
     background-color: #2C7865;
-    color: #90D26D;
+    color: #fff;
     cursor: pointer;
     transition: all .2s ease;
     letter-spacing: 1px;
 }
 
 .header>nav>button:hover {
-    color: #2C7865;
+    color: #fff;
     background-color: #80cf55;
     box-shadow: 1px 3px 10px green;
 }
