@@ -13,6 +13,7 @@ const Header = () => {
           alt="logo"
           sizes="100vw"
           className={styles.log}
+          priority
         />
       </Link>
       <nav>

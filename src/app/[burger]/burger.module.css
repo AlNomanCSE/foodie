@@ -1,0 +1,87 @@
+.section {
+    border-inline: .2px solid rgb(206, 206, 206);
+    max-width: 1350px;
+    margin: 0 auto;
+    min-height: calc(100vh - 139.5938px);
+    background-color: #D9EDBF;
+}
+
+.burger {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.burgerTop {
+    height: 4.5rem;
+    width: 80%;
+    background: -webkit-gradient(linear, left top, left bottom, from(#bc581e), to(#e27b36));
+    background: -webkit-linear-gradient(#bc581e, #e27b36);
+    background: linear-gradient(#bc581e, #e27b36);
+    border-radius: 50% 50% 0 0;
+    -webkit-box-shadow: inset -15px 0 #c15711;
+    box-shadow: inset -15px 0 #c15711;
+    margin: 2% auto;
+    position: relative;
+}
+
+.burgerButtom {
+    height: 3rem;
+    width: 80%;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f08e4a), to(#e27b36));
+    background: -webkit-linear-gradient(#f08e4a, #e27b36);
+    background: linear-gradient(#f08e4a, #e27b36);
+    border-radius: 0 0 30px 30px;
+    -webkit-box-shadow: inset -15px 0 #c15711;
+    box-shadow: inset -15px 0 #c15711;
+    margin: 2% auto;
+
+}
+
+.addingslist {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.addingslist>div {
+    padding: 1rem;
+    display: grid;
+    gap: 5rem;
+    grid-template-columns: 1fr 1fr;
+}
+
+.circle {
+    font-size: 1.5rem;
+}
+
+.icon {
+    cursor: pointer;
+}
+
+.addingslist>div>div {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.addingslist>div>div>div {
+    display: flex;
+    gap: 1rem
+}
+
+.image {
+    width: 400px;
+    height: 50px;
+    object-fit: contain;
+}
