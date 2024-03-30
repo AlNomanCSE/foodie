@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import styles from "./menu.module.css";
 import AboutSection from "@/components/app components/AboutSection";
 import Image from "next/image";
@@ -50,6 +51,7 @@ const menuList = [
   },
 ];
 const page = () => {
+
   return (
     <section className={styles.section}>
       <div>
