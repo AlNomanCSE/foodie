@@ -3,8 +3,8 @@
     max-width: 1350px;
     margin: 0 auto;
     min-height: calc(100vh - 139.5938px);
-    background-color: #D9EDBF;
-    color: rgba(32, 85, 72, 1);
+    background-color: #F7F6BB;
+    color: #114232;
 }
 
 .section p {
@@ -30,9 +30,9 @@
     align-items: center;
     overflow: hidden;
     border-radius: 10px;
-    background-color: rgba(184, 241, 109, 1);
+    background-color: #FCDC2A;
     transition: all .3s ease;
-    box-shadow: 10px 10px 20px rgba(206, 77, 37, 0.8);
+
 }
 
 .image {
@@ -53,7 +53,7 @@
     letter-spacing: 1px;
     border: none;
     border-radius: 20px;
-    background-color: rgba(32, 85, 72, .8);
+    background-color:#114232;
     color: #fff;
     font-weight: 600;
     cursor: pointer;

@@ -1,10 +1,10 @@
 .header {
-    background-color: #90D26D;
+    background-color: #87A922;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 3rem;
-    color: #2C7865;
+    color: #FFF;
     max-width: 1350px;
     margin: 0 auto;
 }
@@ -42,7 +42,7 @@
     text-transform: capitalize;
     font-weight: 600;
     background-color: #2C7865;
-    color: #fff;
+    color: #FFF;
     cursor: pointer;
     transition: all .2s ease;
     letter-spacing: 1px;
@@ -50,7 +50,7 @@
 
 .header>nav>button:hover {
     color: #fff;
-    background-color: #80cf55;
+    background-color: #114232;
     box-shadow: 1px 3px 10px green;
 }
 
