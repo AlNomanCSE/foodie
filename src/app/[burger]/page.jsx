@@ -38,7 +38,11 @@ const page = ({ params }) => {
   );
 
   const handleIncrement = (setState) => () => setState((prev) => prev + 1);
-  const handleDecrement = (setState) => () => setState((prev) => prev - 1);
+  const handleDecrement = (setState) => () =>
+    setState((prev) => {
+      if (prev <= 0) return 0;
+      return prev - 1;
+    });
 
   const renderIngredient = (name, setState) => (
     <div>
