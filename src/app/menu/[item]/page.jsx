@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./item.module.css";
+import { TiTick } from "react-icons/ti";
 import Image from "next/image";
 import AboutSection from "@/components/app components/AboutSection";
 const menuList = [
@@ -70,13 +71,34 @@ const page = ({ params }) => {
         <div className={styles.buttom}>
           <div>
             <h4>Ingredients</h4>
-            <p>Turkey</p>
-            <p>Bacon</p>
-            <p>Ham</p>
-            <p>Cheese</p>
-            <p>Lettuce</p>
-            <p>Tomato</p>
-            <p>Mayo</p>
+            <p>
+              <TiTick />
+              Turkey
+            </p>
+            <p>
+              <TiTick />
+              Bacon
+            </p>
+            <p>
+              <TiTick />
+              Ham
+            </p>
+            <p>
+              <TiTick />
+              Cheese
+            </p>
+            <p>
+              <TiTick />
+              Lettuce
+            </p>
+            <p>
+              <TiTick />
+              Tomato
+            </p>
+            <p>
+              <TiTick />
+              Mayo
+            </p>
           </div>
           <div>
             <h4>Calorie (approx)</h4>
