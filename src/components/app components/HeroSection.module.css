@@ -39,7 +39,6 @@
 
 .card:hover {
     transform: scale(1.1);
-    box-shadow: 2px -2px 5px rgb(13, 201, 6);
 }
 
 .card .image {
@@ -98,14 +97,15 @@
 
     .section_1 .div_1 {
         max-width: 250px;
-    
+
         margin: 0 auto;
         padding: 2rem 0 1rem 0;
 
     }
-        .section_1 p {
-            font-size: .9rem;
-        }
+
+    .section_1 p {
+        font-size: .9rem;
+    }
 
     .cards {
         grid-template-rows: repeat(4, 300px);

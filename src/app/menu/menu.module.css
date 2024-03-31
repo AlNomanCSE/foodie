@@ -32,7 +32,10 @@
     border-radius: 10px;
     background-color: #FCDC2A;
     transition: all .3s ease;
+}
 
+.menuCard:hover {
+    transform: skew(3deg) scale(.9);
 }
 
 .image {
@@ -53,7 +56,7 @@
     letter-spacing: 1px;
     border: none;
     border-radius: 20px;
-    background-color:#114232;
+    background-color: #114232;
     color: #fff;
     font-weight: 600;
     cursor: pointer;
