@@ -53,9 +53,9 @@ const page = ({ params }) => {
           ? prices["cheddarpatty"]
           : name === "Vegetable"
           ? prices["vegetablepetty"]
-          : name === "Cheese"
+          : name === "cheese"
           ? prices["cheese"]
-          : name === "Bacon"
+          : name === "bacon"
           ? prices["bacon"]
           : prices["salad"]}
       </p>
@@ -164,6 +164,38 @@ const page = ({ params }) => {
     bacon,
     totalCost,
   ]);
+  useEffect(() => {
+    const storeValue = JSON.parse(localStorage.getItem("customeBurger"));
+    const {
+      mainPatty: { name, patties: storePatties },
+      cheese: storedCheese,
+      salad: storedSalad,
+      bacon: storedBacon,
+      totalCost: storedTotalCost,
+    } = storeValue;
+    const total =
+      (burgerName === "Beef Burger"
+        ? prices["beefpatty"]
+        : burgerName === "Chicken Burger"
+        ? prices["chickenpatty"]
+        : burgerName === "Cheese Burger"
+        ? prices["cheddarpatty"]
+        : prices["vegetablepetty"]) *
+        storePatties +
+      storedCheese * prices["cheese"] +
+      storedBacon * prices["bacon"] +
+      storedSalad * prices["salad"];
+    setToalCost(total.toFixed(2));
+  }, [
+    beefpatty,
+    cheddarpatty,
+    chickenpatty,
+    vegetablepetty,
+    cheese,
+    salad,
+    bacon,
+  ]);
+
   return (
     <section className={styles.section}>
       <h2>{burgerName}</h2>
@@ -189,7 +221,7 @@ const page = ({ params }) => {
         <div className={styles.burgerButtom}></div>
       </div>
       <div className={styles.addingslist}>
-        <p>Price :${totalCost}</p>
+        <p>Price : ${totalCost}</p>
         <div>
           {burgerName === "Beef Burger" &&
             renderIngredient("Beef", setBeefpatty)}
