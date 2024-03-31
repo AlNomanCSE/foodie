@@ -15,7 +15,7 @@ const page = ({ params }) => {
   const [cheddarpatty, setCheddarpatty] = useState(0);
   const [vegetablepetty, setVegetablepetty] = useState(0);
 
-  const [chees, setCheese] = useState(0);
+  const [cheese, setCheese] = useState(0);
   const [salad, setSalad] = useState(0);
   const [bacon, seTBacon] = useState(0);
 
@@ -67,6 +67,33 @@ const page = ({ params }) => {
     }
     return pattyImages;
   };
+  const sidePatties = (patty) => {
+    let showPatty =
+      patty === "salad"
+        ? salad
+        : patty === "cheese"
+        ? cheese
+        : patty === "bacon"
+        ? bacon
+        : null;
+    const pattyImages = [];
+    let x = 0;
+    while (x < showPatty) {
+      pattyImages.push(
+        <Image
+          key={x}
+          src={`/images/burgers/${patty}.svg`}
+          alt="patty image"
+          width={0}
+          height={0}
+          sizes="100vw"
+          className={styles.image}
+        />
+      );
+      x++;
+    }
+    return pattyImages;
+  };
   const SetmainPatties =
     burgerName === "Beef Burger"
       ? "beef"
@@ -82,21 +109,21 @@ const page = ({ params }) => {
       <div className={styles.burger}>
         <div className={styles.burgerTop}></div>
         {/* salad */}
-        {/* {sidePatties("vegetable").map((item, index) => (
-          <div key={index}>{item}</div>
-        ))} */}
+        {sidePatties("salad").map((item, index) => (
+          <div key={index} className={styles.salad}></div>
+        ))}
         {/* chesse */}
+        {sidePatties("cheese").map((item, index) => (
+          <div key={index} className={styles.cheese}></div>
+        ))}
+        {/* main patty */}
         {mainPatties(SetmainPatties).map((item, index) => (
           <div key={index}>{item}</div>
         ))}
-        {/* main patty */}
-        {/* {sidePatties("cheese").map((item, index) => (
-          <div key={index}>{item}</div>
-        ))} */}
         {/* bacon */}
-        {/* {mainPatties("beef").map((item, index) => (
-          <div key={index}>{item}</div>
-        ))} */}
+        {sidePatties("bacon").map((item, index) => (
+          <div key={index} className={styles.bacon}></div>
+        ))}
 
         <div className={styles.burgerButtom}></div>
       </div>
