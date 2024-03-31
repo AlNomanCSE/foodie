@@ -51,7 +51,10 @@ const menuList = [
   },
 ];
 const page = () => {
-
+  useEffect(() => {
+    const storedValue = localStorage.getItem("customeBurger");
+    console.log(JSON.parse(storedValue));
+  }, []);
   return (
     <section className={styles.section}>
       <div>

@@ -16,7 +16,7 @@ const burgerList = [
   },
   {
     imagesrc: "/images/burgers/cheese-burger.jpg",
-    name: "Chesse Burger",
+    name: "Cheese Burger",
     price: 9.99,
   },
   {
@@ -43,7 +43,7 @@ const HeroSection = () => {
               width={0}
               height={0}
               sizes="100vw"
-              alt="beef burger"
+              alt="burger"
               className={styles.image}
             />
             <div>

@@ -1,14 +1,12 @@
 "use client";
 import AboutSection from "@/components/app components/AboutSection";
 import { IoIosAddCircle, IoIosRemoveCircle } from "react-icons/io";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./burger.module.css";
 import Image from "next/image";
 
 const page = ({ params }) => {
   const burgerName = decodeURIComponent(params.burger);
-
-  const [totalCost, setToalCost] = useState(0);
 
   const [beefpatty, setBeefpatty] = useState(0);
   const [chickenpatty, setChickenpatty] = useState(0);
@@ -19,12 +17,48 @@ const page = ({ params }) => {
   const [salad, setSalad] = useState(0);
   const [bacon, seTBacon] = useState(0);
 
+  const prices = {
+    beefpatty: 1.5,
+    chickenpatty: 0.9,
+    cheddarpatty: 1,
+    vegetablepetty: 0.7,
+    cheese: 0.3,
+    salad: 0.27,
+    bacon: 0.5,
+  };
+
+  const [totalCost, setToalCost] = useState(
+    burgerName === "Beef Burger"
+      ? prices["beefpatty"]
+      : burgerName === "Chicken Burger"
+      ? prices["chickenpatty"]
+      : burgerName === "Cheese Burger"
+      ? prices["cheddarpatty"]
+      : prices["vegetablepetty"]
+  );
+
   const handleIncrement = (setState) => () => setState((prev) => prev + 1);
   const handleDecrement = (setState) => () => setState((prev) => prev - 1);
 
   const renderIngredient = (name, setState) => (
     <div>
       <p>{name}</p>
+      <p>
+        +$
+        {name === "Beef"
+          ? prices["beefpatty"]
+          : name === "Chicken"
+          ? prices["chickenpatty"]
+          : name === "Cheese"
+          ? prices["cheddarpatty"]
+          : name === "Vegetable"
+          ? prices["vegetablepetty"]
+          : name === "Cheese"
+          ? prices["cheese"]
+          : name === "Bacon"
+          ? prices["bacon"]
+          : prices["salad"]}
+      </p>
       <div className={styles.circle}>
         <IoIosAddCircle
           className={styles.icon}
@@ -65,17 +99,13 @@ const page = ({ params }) => {
       );
       x++;
     }
+
     return pattyImages;
   };
   const sidePatties = (patty) => {
     let showPatty =
-      patty === "salad"
-        ? salad
-        : patty === "cheese"
-        ? cheese
-        : patty === "bacon"
-        ? bacon
-        : null;
+      patty === "salad" ? salad : patty === "cheese" ? cheese : bacon;
+
     const pattyImages = [];
     let x = 0;
     while (x < showPatty) {
@@ -99,13 +129,44 @@ const page = ({ params }) => {
       ? "beef"
       : burgerName === "Chicken Burger"
       ? "chicken"
-      : burgerName === "Chesse Burger"
+      : burgerName === "Cheese Burger"
       ? "cheese"
-      : burgerName === "Vegetable Burger"
-      ? "vegetable"
-      : "";
+      : "vegetable";
+
+  useEffect(() => {
+    localStorage.setItem(
+      "customeBurger",
+      JSON.stringify({
+        mainPatty: {
+          name: burgerName,
+          patties:
+            burgerName === "Beef Burger"
+              ? beefpatty
+              : burgerName === "Chicken Burger"
+              ? chickenpatty
+              : burgerName === "Cheese Burger"
+              ? cheddarpatty
+              : vegetablepetty,
+        },
+        cheese: cheese,
+        salad: salad,
+        bacon: bacon,
+        totalCost: totalCost,
+      })
+    );
+  }, [
+    beefpatty,
+    cheddarpatty,
+    chickenpatty,
+    vegetablepetty,
+    cheese,
+    salad,
+    bacon,
+    totalCost,
+  ]);
   return (
     <section className={styles.section}>
+      <h2>{burgerName}</h2>
       <div className={styles.burger}>
         <div className={styles.burgerTop}></div>
         {/* salad */}
@@ -128,21 +189,23 @@ const page = ({ params }) => {
         <div className={styles.burgerButtom}></div>
       </div>
       <div className={styles.addingslist}>
-        <p>Price :$4</p>
+        <p>Price :${totalCost}</p>
         <div>
           {burgerName === "Beef Burger" &&
             renderIngredient("Beef", setBeefpatty)}
           {burgerName === "Chicken Burger" &&
             renderIngredient("Chicken", setChickenpatty)}
-          {burgerName === "Chesse Burger" &&
-            renderIngredient("Chesse", setCheddarpatty)}
+          {burgerName === "Cheese Burger" &&
+            renderIngredient("Cheese", setCheddarpatty)}
           {burgerName === "Vegetable Burger" &&
             renderIngredient("Vegetable", setVegetablepetty)}
-          {renderIngredient("Cheese", setCheese)}
-          {renderIngredient("Salad", setSalad)}
-          {renderIngredient("Bacon", seTBacon)}
+          {renderIngredient("cheese", setCheese)}
+          {renderIngredient("salad", setSalad)}
+          {renderIngredient("bacon", seTBacon)}
         </div>
+        <button>Order Now</button>
       </div>
+
       <AboutSection />
     </section>
   );

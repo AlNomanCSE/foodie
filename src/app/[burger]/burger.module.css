@@ -4,6 +4,27 @@
     margin: 0 auto;
     min-height: calc(100vh - 139.5938px);
     background-color: #D9EDBF;
+    color: rgba(32, 85, 72, 1);
+}
+
+.section h2 {
+    text-align: center;
+    padding: 2rem 0 0 0;
+}
+
+.section p {
+    color: rgba(32, 85, 72, .9);
+}
+
+.section button {
+    margin: 2rem;
+    padding: .5rem 1rem;
+    border-radius: 20px;
+    border: none;
+    background-color: #2C7865;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 .burger {
@@ -61,6 +82,12 @@
 
 }
 
+.addingslist>p {
+    color: rgba(32, 85, 72, 1);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
 .circle {
     font-size: 1.5rem;
 }
@@ -76,6 +103,10 @@
     justify-content: center;
     align-items: center;
 
+}
+
+.addingslist>div>div>P:first-child {
+    font-weight: 600;
 }
 
 .addingslist>div>div>div {
@@ -119,4 +150,14 @@
     background: linear-gradient(#bf3813, #c45e38);
     margin: 2% auto;
     border-radius: 1.25rem;
+}
+
+@media screen and (width<=600px) {
+    .section h2 {
+        font-size: 1.2rem;
+    }
+
+    .section button {
+        font-weight: 500;
+    }
 }
