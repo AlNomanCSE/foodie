@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import styles from "./menu.module.css";
 import AboutSection from "@/components/app components/AboutSection";
 import Image from "next/image";
+import Link from "next/link";
 const menuList = [
   {
     imageUrl: "/images/menu/cheese-pizza.jpg",
@@ -51,10 +52,6 @@ const menuList = [
   },
 ];
 const page = () => {
-  useEffect(() => {
-    const storedValue = localStorage.getItem("customeBurger");
-    console.log(JSON.parse(storedValue));
-  }, []);
   return (
     <section className={styles.section}>
       <div>
@@ -77,7 +74,9 @@ const page = () => {
                 <h2>{item.name}</h2>
                 <p>Starts from ${item.price}</p>
               </div>
-              <button>Order Now</button>
+              <button>
+                <Link href={`/menu/${item.name}`}>Order Now</Link>
+              </button>
             </div>
           </div>
         ))}
