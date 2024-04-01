@@ -32,11 +32,13 @@
         padding: 1rem;
         gap: 1rem;
         color: rgba(32, 85, 72, 1);
-        text-align: center
+        text-align: center;
+
     }
 
     .section_2 div:nth-child(2) {
-        width: 270px;
+        width: 290px;
+
     }
 
     .section_2 h2 {

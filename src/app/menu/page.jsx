@@ -4,6 +4,7 @@ import styles from "./menu.module.css";
 import AboutSection from "@/components/app components/AboutSection";
 import Image from "next/image";
 import Link from "next/link";
+
 const menuList = [
   {
     imageUrl: "/images/menu/cheese-pizza.jpg",
