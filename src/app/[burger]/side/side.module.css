@@ -15,6 +15,7 @@
 .cards {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1rem;
 }
 
@@ -47,4 +48,54 @@
     color: rgba(32, 85, 72, 1);
     font-size: 1rem;
     font-weight: 600;
+}
+
+.sideDrinks {
+    width: 500px;
+    display: flex;
+    gap: 1rem;
+    background-color: #FCDC2A;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2rem;
+}
+
+.sideDrinks .image {
+    width: 70px;
+    height: 70px;
+}
+
+.plus {
+    color: green;
+    font-size: 1.4rem;
+}
+
+@media screen and (width<=600px) {
+    .burgerDetails {
+        width: 300px;
+        flex-direction: column;
+        padding: 1rem
+    }
+
+    .sideDrinks {
+        width: 300px;
+        font-size: .9rem;
+        padding: 1rem;
+    }
+
+    .sideDrinks .image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .sideDrinks div {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+    }
+
+    .plus {
+        font-size: 1.5rem;
+    }
 }

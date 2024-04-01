@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { FaPlusCircle } from "react-icons/fa";
 import styles from "./side.module.css";
 import Image from "next/image";
 const SidePage = () => {
@@ -44,7 +45,7 @@ const SidePage = () => {
             )}
           </div>
         </div>
-        <div className={styles.burgerDetails}>
+        <div className={styles.sideDrinks}>
           <Image
             src="/images/side-n-drink/drink-and-fries.svg"
             width={0}
@@ -57,8 +58,9 @@ const SidePage = () => {
             <p>Add small drink and fries +$6</p>
             <p>1x small fries and 250ml drink</p>
           </div>
+          <FaPlusCircle className={styles.plus} />
         </div>
-        <div className={styles.burgerDetails}>
+        <div className={styles.sideDrinks}>
           <Image
             src="/images/side-n-drink/drink-and-fries.svg"
             width={0}
@@ -71,8 +73,9 @@ const SidePage = () => {
             <p>Add medium drink and fries +$8</p>
             <p>1x medium fries and 350ml drink</p>
           </div>
+          <FaPlusCircle className={styles.plus} />
         </div>
-        <div className={styles.burgerDetails}>
+        <div className={styles.sideDrinks}>
           <Image
             src="/images/side-n-drink/drink-and-fries.svg"
             width={0}
@@ -85,6 +88,7 @@ const SidePage = () => {
             <p>Add large drink and fries +$10</p>
             <p>1x large fries and 450ml drink</p>
           </div>
+          <FaPlusCircle className={styles.plus} />
         </div>
       </div>
     </section>
