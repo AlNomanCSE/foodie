@@ -61,10 +61,10 @@
 
 @media screen and (width<=600px) {
     .form {
-        max-width: 300px;
+        max-width: 350px;
         padding: 1rem;
         border-radius: 10px;
-        gap: .5rem;
+        gap: 1rem;
     }
 
     .form div input {

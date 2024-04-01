@@ -5,13 +5,17 @@ const LoginPage = () => {
   return (
     <section className={styles.section}>
       <form className={styles.form}>
+        <h2>Login</h2>
         <div>
-          <label htmlFor="email">Email</label>
-          <input type="email" name="email" id="email" />
+          <input type="email" name="email" id="email" placeholder="Email" />
         </div>
         <div>
-          <label htmlFor="password">Password</label>
-          <input type="password" name="password" id="password" />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="password"
+          />
         </div>
         <button>Register</button>
         <p>
