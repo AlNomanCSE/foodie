@@ -19,6 +19,17 @@
     gap: 1rem;
 }
 
+.cards button {
+    margin: 2rem;
+    padding: .5rem 1rem;
+    border-radius: 20px;
+    border: none;
+    background-color: #2C7865;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
 .section p {
     color: rgba(32, 85, 72, .6);
 }

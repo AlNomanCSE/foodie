@@ -90,6 +90,7 @@ const SidePage = () => {
           </div>
           <FaPlusCircle className={styles.plus} />
         </div>
+        <button>Confirm order</button>
       </div>
     </section>
   );

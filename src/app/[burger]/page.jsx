@@ -240,9 +240,16 @@ const page = ({ params }) => {
           {renderIngredient("salad", setSalad)}
           {renderIngredient("bacon", seTBacon)}
         </div>
-        <button>
-          <Link href={`/${burgerName}/side`}>Order Now</Link>
-        </button>
+
+        {!salad || !bacon || !cheese ? (
+          <button style={{ backgroundColor: "darkgray", color: "black" }}>
+            Order Now
+          </button>
+        ) : (
+          <button>
+            <Link href={`/${burgerName}/side`}>Order Now</Link>
+          </button>
+        )}
       </div>
 
       <AboutSection />
