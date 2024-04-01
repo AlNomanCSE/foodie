@@ -1,0 +1,12 @@
+.section {
+    border-inline: .2px solid rgb(206, 206, 206);
+    max-width: 1350px;
+    margin: 0 auto;
+    min-height: calc(100vh - 139.5938px);
+    background-color: #F7F6BB;
+    color: #114232;
+}
+
+.section p {
+    color: rgba(32, 85, 72, .7);
+}
