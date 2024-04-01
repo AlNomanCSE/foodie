@@ -4,6 +4,7 @@ import { IoIosAddCircle, IoIosRemoveCircle } from "react-icons/io";
 import React, { useEffect, useState } from "react";
 import styles from "./burger.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 const page = ({ params }) => {
   const burgerName = decodeURIComponent(params.burger);
@@ -239,7 +240,9 @@ const page = ({ params }) => {
           {renderIngredient("salad", setSalad)}
           {renderIngredient("bacon", seTBacon)}
         </div>
-        <button>Order Now</button>
+        <button>
+          <Link href={`/${burgerName}/side`}>Order Now</Link>
+        </button>
       </div>
 
       <AboutSection />
