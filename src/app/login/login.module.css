@@ -1,6 +1,6 @@
 .section {
     max-width: 1350px;
-    margin:0 auto;
+    margin: 0 auto;
     min-height: calc(100vh - 139.5938px);
     background-color: #F7F6BB;
     border-inline: .2px solid rgb(206, 206, 206);
@@ -52,4 +52,22 @@
 .form p {
     color: #fff;
     font-size: 1rem;
+}
+
+@media screen and (width<=600px) {
+    .form {
+        max-width: 300px;
+        padding: 1rem;
+        border-radius: 10px;
+        gap: .5rem;
+    }
+
+    .form div input {
+        padding: .5rem;
+        font-size: .9rem;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        color: #114232;
+    }
 }

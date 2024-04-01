@@ -41,3 +41,21 @@
     color: #fff;
     font-size: 1rem;
 }
+
+@media screen and (width<=600px) {
+    .form {
+        max-width: 300px;
+        padding: 1rem;
+        border-radius: 10px;
+        gap: .5rem;
+    }
+
+    .form div input {
+        padding: .5rem;
+        font-size: .9rem;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        color: #114232;
+    }
+}
