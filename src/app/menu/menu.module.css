@@ -35,7 +35,7 @@
 }
 
 .menuCard:hover {
-    transform: skew(3deg) scale(.9);
+    transform: scale(.9);
 }
 
 .image {
