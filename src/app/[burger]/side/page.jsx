@@ -4,11 +4,30 @@ import { FaPlusCircle } from "react-icons/fa";
 import styles from "./side.module.css";
 import Image from "next/image";
 const SidePage = () => {
-  const [data, setData] = useState();
+  const [data, setData] = useState(null);
+  const [total, setTotal] = useState(0);
+  const [extras, setExtras] = useState("No fries and drink");
   useEffect(() => {
     setData(JSON.parse(localStorage.getItem("customeBurger")));
+    setTotal(
+      Number(JSON.parse(localStorage.getItem("customeBurger")).totalCost)
+    );
   }, []);
-  console.log(data);
+
+  function handleClick(amount) {
+    const newTotal = Number(data.totalCost) + amount;
+    setTotal(newTotal);
+    setExtras(
+      `One ${
+        amount === 6 ? "small" : amount === 8 ? "medium" : "large"
+      } fries and drink`
+    );
+  }
+
+  function handlelocakStorage() {
+    const updateData = { ...data, totalCost: total, extras: extras };
+    localStorage.setItem("customeBurger", JSON.stringify(updateData));
+  }
   return (
     <section className={styles.section}>
       <div className={styles.cards}>
@@ -29,7 +48,7 @@ const SidePage = () => {
                 <p>Cheese: {data.cheese}</p>
                 <p>Bacon: {data.bacon}</p>
                 <p>
-                  Patty: {data.mainPatty.patties} ({" "}
+                  Patty: {data.mainPatty.patties} (
                   {data.mainPatty.name == "Cheese Burger"
                     ? "chadder"
                     : data.mainPatty.name == "Beef Burger"
@@ -39,8 +58,8 @@ const SidePage = () => {
                     : "vegitable"}
                   )
                 </p>
-                <p>Side: No fries and drink </p>
-                <p>Total price: ${data.totalCost}</p>
+                <p>Side: {extras} </p>
+                <p>Total price: ${total}</p>
               </>
             )}
           </div>
@@ -58,7 +77,10 @@ const SidePage = () => {
             <p>Add small drink and fries +$6</p>
             <p>1x small fries and 250ml drink</p>
           </div>
-          <FaPlusCircle className={styles.plus} />
+          <FaPlusCircle
+            className={styles.plus}
+            onClick={() => handleClick(6)}
+          />
         </div>
         <div className={styles.sideDrinks}>
           <Image
@@ -73,7 +95,10 @@ const SidePage = () => {
             <p>Add medium drink and fries +$8</p>
             <p>1x medium fries and 350ml drink</p>
           </div>
-          <FaPlusCircle className={styles.plus} />
+          <FaPlusCircle
+            className={styles.plus}
+            onClick={() => handleClick(8)}
+          />
         </div>
         <div className={styles.sideDrinks}>
           <Image
@@ -88,9 +113,12 @@ const SidePage = () => {
             <p>Add large drink and fries +$10</p>
             <p>1x large fries and 450ml drink</p>
           </div>
-          <FaPlusCircle className={styles.plus} />
+          <FaPlusCircle
+            className={styles.plus}
+            onClick={() => handleClick(10)}
+          />
         </div>
-        <button>Confirm order</button>
+        <button onClick={handlelocakStorage}>Confirm order</button>
       </div>
     </section>
   );
