@@ -21,7 +21,9 @@ const Header = () => {
           <Link href="/menu">Menu</Link>
         </p>
         <p>Dashboard</p>
-        <button>Sign up</button>
+        <button>
+          <Link href="/register">Sign up</Link>
+        </button>
       </nav>
     </header>
   );
