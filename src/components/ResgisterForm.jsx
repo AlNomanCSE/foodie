@@ -3,7 +3,9 @@
 import React, { useState } from "react";
 import styles from "./ResgisterForm.module.css";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 const UserInfo = () => {
+  const router = useRouter();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -13,7 +15,21 @@ const UserInfo = () => {
     if (!name || !email || !password) {
       setError("All fields are necessery");
     }
+
     try {
+      const registeredUser = await fetch("/api/userExist", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const { user } = await registeredUser.json();
+      if (user) {
+        setError("User alerady exists .");
+        return;
+      }
       const res = await fetch("api/register", {
         method: "POST",
         headers: {
@@ -29,6 +45,8 @@ const UserInfo = () => {
       if (res.ok) {
         const form = e.target;
         form.reset();
+        setError("");
+        router.push("/");
       } else {
         console.log("User Registration failed ...");
       }
