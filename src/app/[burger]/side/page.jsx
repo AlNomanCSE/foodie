@@ -3,7 +3,9 @@ import React, { useEffect, useState } from "react";
 import { FaPlusCircle } from "react-icons/fa";
 import styles from "./side.module.css";
 import Image from "next/image";
-const SidePage = () => {
+import Link from "next/link";
+const SidePage = ({ params }) => {
+  const burgerName = decodeURIComponent(params.burger);
   const [data, setData] = useState(null);
   const [total, setTotal] = useState(0);
   const [extras, setExtras] = useState("No fries and drink");
@@ -118,7 +120,9 @@ const SidePage = () => {
             onClick={() => handleClick(10)}
           />
         </div>
-        <button onClick={handlelocakStorage}>Confirm order</button>
+        <button onClick={handlelocakStorage}>
+          <Link href={`/${burgerName}/side/order`}>Order Now</Link>
+        </button>
       </div>
     </section>
   );

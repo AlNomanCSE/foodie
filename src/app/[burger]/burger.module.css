@@ -96,6 +96,10 @@
     cursor: pointer;
 }
 
+.active {
+    color: red;
+}
+
 .addingslist>div>div {
     display: flex;
     flex-direction: column;

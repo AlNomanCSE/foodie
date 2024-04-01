@@ -45,7 +45,7 @@ const page = ({ params }) => {
       return prev - 1;
     });
 
-  const renderIngredient = (name, setState) => (
+  const renderIngredient = (name, patty, setState) => (
     <div>
       <p>{name}</p>
       <p>
@@ -63,14 +63,16 @@ const page = ({ params }) => {
           : name === "bacon"
           ? prices["bacon"]
           : prices["salad"]}
+        ( X <strong>{patty}</strong>)
       </p>
       <div className={styles.circle}>
         <IoIosAddCircle
           className={styles.icon}
           onClick={handleIncrement(setState)}
         />
+
         <IoIosRemoveCircle
-          className={styles.icon}
+          className={patty > 0 ? `${styles.active}` : ""}
           onClick={handleDecrement(setState)}
         />
       </div>
@@ -229,16 +231,16 @@ const page = ({ params }) => {
         <p>Price : ${totalCost}</p>
         <div>
           {burgerName === "Beef Burger" &&
-            renderIngredient("Beef", setBeefpatty)}
+            renderIngredient("Beef", beefpatty, setBeefpatty)}
           {burgerName === "Chicken Burger" &&
-            renderIngredient("Chicken", setChickenpatty)}
+            renderIngredient("Chicken", chickenpatty, setChickenpatty)}
           {burgerName === "Cheese Burger" &&
-            renderIngredient("Cheese", setCheddarpatty)}
+            renderIngredient("Cheese", cheddarpatty, setCheddarpatty)}
           {burgerName === "Vegetable Burger" &&
-            renderIngredient("Vegetable", setVegetablepetty)}
-          {renderIngredient("cheese", setCheese)}
-          {renderIngredient("salad", setSalad)}
-          {renderIngredient("bacon", seTBacon)}
+            renderIngredient("Vegetable", vegetablepetty, setVegetablepetty)}
+          {renderIngredient("cheese", cheese, setCheese)}
+          {renderIngredient("salad", salad, setSalad)}
+          {renderIngredient("bacon", bacon, seTBacon)}
         </div>
 
         {!salad || !bacon || !cheese ? (
