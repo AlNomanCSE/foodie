@@ -66,9 +66,14 @@
     height: 70px;
 }
 
+.sideDrinks div>p {
+    color: rgba(32, 85, 72, .9);
+}
+
 .plus {
     color: green;
     font-size: 1.4rem;
+    cursor: pointer;
 }
 
 @media screen and (width<=600px) {
