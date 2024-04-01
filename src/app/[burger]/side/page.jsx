@@ -61,7 +61,7 @@ const SidePage = ({ params }) => {
                   )
                 </p>
                 <p>Side: {extras} </p>
-                <p>Total price: ${total}</p>
+                <p>Total price: ${total.toFixed(2)}</p>
               </>
             )}
           </div>

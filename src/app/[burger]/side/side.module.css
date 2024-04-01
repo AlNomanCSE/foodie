@@ -91,7 +91,8 @@
     .burgerDetails {
         width: 300px;
         flex-direction: column;
-        padding: 1rem
+        padding: 1rem;
+        text-align: center;
     }
 
     .sideDrinks {
