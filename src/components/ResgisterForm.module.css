@@ -8,6 +8,14 @@
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    box-shadow: 1px 1px 10px green;
+}
+
+.form h2 {
+    font-size: 1.2rem;
+    color: #114232;
+    align-self: start;
+    padding: 0 1rem;
 }
 
 .form div {
@@ -35,6 +43,15 @@
     border: none;
     color: #fff;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+.form span {
+    color: #fff;
+    align-self: start;
+    background-color: red;
+    border-radius: 5px;
+    padding: .4rem 1rem;
 }
 
 .form p {
