@@ -57,60 +57,64 @@ const page = ({ params }) => {
   return (
     <section className={styles.section}>
       <div className={styles.card}>
-        <div>
-          <h2>{menuObject.name}</h2>
-          <Image
-            src={menuObject.imageUrl}
-            height={0}
-            width={0}
-            sizes="100vw"
-            alt="menu item"
-            className={styles.image}
-          />
-        </div>
-        <div className={styles.buttom}>
-          <div>
-            <h4>Ingredients</h4>
-            <p>
-              <TiTick />
-              Turkey
-            </p>
-            <p>
-              <TiTick />
-              Bacon
-            </p>
-            <p>
-              <TiTick />
-              Ham
-            </p>
-            <p>
-              <TiTick />
-              Cheese
-            </p>
-            <p>
-              <TiTick />
-              Lettuce
-            </p>
-            <p>
-              <TiTick />
-              Tomato
-            </p>
-            <p>
-              <TiTick />
-              Mayo
-            </p>
-          </div>
-          <div>
-            <h4>Calorie (approx)</h4>
-            <p>250</p>
-            <h4>Quantity</h4>
-            <p>1</p>
-            <h4>Pickup time</h4>
-            <p>45 minutes</p>
-            <h4>Price</h4>
-            <p>$5.99</p>
-          </div>
-        </div>
+        {menuObject && (
+          <>
+            <div>
+              <h2>{menuObject.name}</h2>
+              <Image
+                src={menuObject.imageUrl}
+                height={0}
+                width={0}
+                sizes="100vw"
+                alt="menu item"
+                className={styles.image}
+              />
+            </div>
+            <div className={styles.buttom}>
+              <div>
+                <h4>Ingredients</h4>
+                <p>
+                  <TiTick />
+                  Turkey
+                </p>
+                <p>
+                  <TiTick />
+                  Bacon
+                </p>
+                <p>
+                  <TiTick />
+                  Ham
+                </p>
+                <p>
+                  <TiTick />
+                  Cheese
+                </p>
+                <p>
+                  <TiTick />
+                  Lettuce
+                </p>
+                <p>
+                  <TiTick />
+                  Tomato
+                </p>
+                <p>
+                  <TiTick />
+                  Mayo
+                </p>
+              </div>
+              <div>
+                <h4>Calorie (approx)</h4>
+                <p>250</p>
+                <h4>Quantity</h4>
+                <p>1</p>
+                <h4>Pickup time</h4>
+                <p>45 minutes</p>
+                <h4>Price</h4>
+                <p>$5.99</p>
+              </div>
+            </div>
+          </>
+        )}
         <button>Order</button>
       </div>
       <AboutSection />

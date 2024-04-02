@@ -23,7 +23,7 @@ const LoginPage = () => {
         setError("Invalid Crediantials");
         return;
       }
-      router.replace("menu");
+      router.replace("/");
     } catch (error) {
       console.log(error);
     }
