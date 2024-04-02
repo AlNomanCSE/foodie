@@ -1,0 +1,72 @@
+.section {
+    border-inline: .2px solid rgb(206, 206, 206);
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: calc(100vh - 139.5938px);
+    background-color: #F7F6BB;
+    color: rgba(32, 85, 72, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.section>div {
+    display: flex;
+    flex-direction: column;
+}
+
+.section>div>div {
+    display: flex;
+    line-height: 1.8;
+}
+
+.section button {
+    margin: 2rem;
+    padding: .5rem 1rem;
+    border-radius: 20px;
+    border: none;
+    background-color: #2C7865;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.image1 {
+    width: 150px;
+    height: 150px;
+}
+
+.image2 {
+    width: 100px;
+    height: 100px;
+}
+
+@media screen and (width<=600px) {
+    .section h2 {
+        font-size: 1.2rem;
+    }
+
+    .section h3 {
+        font-size: 1.1rem;
+    }
+
+    .image1 {
+        width: 100px;
+        height: 100px;
+    }
+
+    .image2 {
+        width: 80px;
+        height: 80px;
+    }
+
+    .section>div div:last-child {
+        padding: 1rem;
+    }
+
+    .section>div>div strong {
+        font-size: .9rem;
+    }
+}

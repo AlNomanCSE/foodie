@@ -9,6 +9,23 @@ const SidePage = ({ params }) => {
   const [data, setData] = useState(null);
   const [total, setTotal] = useState(0);
   const [extras, setExtras] = useState("No fries and drink");
+
+  const [itemTOremove, setItemTOremove] = useState({
+    mayo: false,
+    ketchup: false,
+    lettuce: false,
+    mustard: false,
+    onions: false,
+    labelickles: false,
+    tomato: false,
+  });
+  function handleChange(event) {
+    const { name, checked } = event.target;
+    setItemTOremove({ ...itemTOremove, [name]: checked });
+  }
+  const finalListOfRemoveItems = Object.keys(itemTOremove).filter(
+    (item) => itemTOremove[item]
+  );
   useEffect(() => {
     setData(JSON.parse(localStorage.getItem("customeBurger")));
     setTotal(
@@ -27,7 +44,12 @@ const SidePage = ({ params }) => {
   }
 
   function handlelocakStorage() {
-    const updateData = { ...data, totalCost: total, extras: extras };
+    const updateData = {
+      ...data,
+      totalCost: total,
+      extras,
+      finalListOfRemoveItems,
+    };
     localStorage.setItem("customeBurger", JSON.stringify(updateData));
   }
   return (
@@ -125,36 +147,71 @@ const SidePage = ({ params }) => {
           <div>
             <div>
               <label htmlFor="mayo">Mayo</label>
-              <input type="checkbox" name="mayo" />
+              <input
+                type="checkbox"
+                name="mayo"
+                checked={itemTOremove.mayo}
+                onChange={handleChange}
+              />
             </div>
             <div>
               <label htmlFor="ketchup">Ketchup</label>
-              <input type="checkbox" name="ketchup" />
+              <input
+                type="checkbox"
+                name="ketchup"
+                checked={itemTOremove.ketchup}
+                onChange={handleChange}
+              />
             </div>
             <div>
               <label htmlFor="lettuce">Lettuce</label>
-              <input type="checkbox" name="lettuce" />
+              <input
+                type="checkbox"
+                name="lettuce"
+                checked={itemTOremove.lettuce}
+                onChange={handleChange}
+              />
             </div>
             <div>
               <label htmlFor="mustard">Mustard</label>
-              <input type="checkbox" name="mustard" />
+              <input
+                type="checkbox"
+                name="mustard"
+                checked={itemTOremove.mustard}
+                onChange={handleChange}
+              />
             </div>
             <div>
               <label htmlFor="onions">Onions</label>
-              <input type="checkbox" name="onions" />
+              <input
+                type="checkbox"
+                name="onions"
+                checked={itemTOremove.onions}
+                onChange={handleChange}
+              />
             </div>
             <div>
               <label htmlFor="labelickles">labelickles</label>
-              <input type="checkbox" name="labelickles" />
+              <input
+                type="checkbox"
+                name="labelickles"
+                checked={itemTOremove.labelickles}
+                onChange={handleChange}
+              />
             </div>
             <div>
               <label htmlFor="tomato">Tomato</label>
-              <input type="checkbox" name="tomato" />
+              <input
+                type="checkbox"
+                name="tomato"
+                checked={itemTOremove.tomato}
+                onChange={handleChange}
+              />
             </div>
           </div>
         </div>
         <button onClick={handlelocakStorage}>
-          <Link href={`/${burgerName}/side/order`}>Order Now</Link>
+          <Link href={`/${burgerName}/side/order`}>Confirm</Link>
         </button>
       </div>
     </section>
