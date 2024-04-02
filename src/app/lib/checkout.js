@@ -12,9 +12,9 @@ export async function checkout({ lineItems }) {
   await stripe.redirectToCheckout({
     mode: "payment",
     lineItems,
-    successUrl: `http://localhost:3000/dashboard/ordersuccessful`,
-    cancelUrl: `http://localhost:3000/dashboard/ordersuccessful`,
-    // successUrl: `https://ordercustomfood.netlify.app//dashboard/ordersuccessful`,
-    // cancelUrl: `https://ordercustomfood.netlify.app//dashboard/ordersuccessful`,
+    // successUrl: `http://localhost:3000/dashboard/ordersuccessful`,
+    // cancelUrl: `http://localhost:3000/dashboard/ordersuccessful`,
+    successUrl: `https://ordercustomfood.netlify.app//dashboard/ordersuccessful`,
+    cancelUrl: `https://ordercustomfood.netlify.app//dashboard/ordersuccessful`,
   });
 }
