@@ -120,6 +120,16 @@ const SidePage = ({ params }) => {
             onClick={() => handleClick(10)}
           />
         </div>
+        <div>
+          <h4>Items to remove</h4>
+          <label>Mayo</label> 
+          <p>Ketchup</p> 
+          <p>Lettuce</p> 
+          <p>Mustard</p> 
+          <p>Onions</p>
+          <p>Pickles</p> 
+          <p>Tomato</p>
+        </div>
         <button onClick={handlelocakStorage}>
           <Link href={`/${burgerName}/side/order`}>Order Now</Link>
         </button>

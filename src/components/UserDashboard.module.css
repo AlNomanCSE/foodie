@@ -1,0 +1,56 @@
+.mainDiv {
+    padding: 2rem;
+}
+
+.mainDiv>div {
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin: 0 auto;
+    background-color: rgba(252, 220, 42, .5);
+    align-items: center;
+}
+
+.mainDiv>div>div {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.mainDiv div div button {
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: 25px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.mainDiv div div button:nth-child(1) {
+    background-color: green;
+}
+
+.mainDiv div div button:nth-child(2) {
+    background-color: blue;
+}
+
+.mainDiv div div button:nth-child(3) {
+    background-color: rgb(230, 132, 51);
+}
+
+@media screen and (width<=600px) {
+    .mainDiv {
+        padding: 1rem;
+    }
+
+    .mainDiv>div {
+        padding: 1rem 1rem;
+        max-width: 300px;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        gap: 1.5rem;
+        text-align: center;
+    }
+}

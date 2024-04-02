@@ -36,7 +36,7 @@ const Header = () => {
           <button onClick={() => signOut()}>Log Out</button>
         ) : (
           <button>
-            <Link href="/register">Sign up</Link>
+            <Link href="/login">Log In</Link>
           </button>
         )}
       </nav>
