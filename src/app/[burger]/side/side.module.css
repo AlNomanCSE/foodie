@@ -19,6 +19,8 @@
     gap: 1rem;
 }
 
+
+
 .cards button {
     margin: 2rem;
     padding: .5rem 1rem;
@@ -87,6 +89,25 @@
     cursor: pointer;
 }
 
+.itemToRemove {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    gap: .5rem;
+    padding: 1.5rem;
+}
+
+.itemToRemove div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: stretch;
+    gap: .4rem;
+}
+
+.itemToRemove input {
+    accent-color: red;
+}
+
 @media screen and (width<=600px) {
     .burgerDetails {
         width: 300px;
@@ -114,5 +135,10 @@
 
     .plus {
         font-size: 1.5rem;
+    }
+
+    .itemToRemove {
+        width: 300px;
+
     }
 }

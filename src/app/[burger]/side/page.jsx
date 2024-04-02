@@ -120,15 +120,38 @@ const SidePage = ({ params }) => {
             onClick={() => handleClick(10)}
           />
         </div>
-        <div>
+        <div className={styles.itemToRemove}>
           <h4>Items to remove</h4>
-          <label>Mayo</label> 
-          <p>Ketchup</p> 
-          <p>Lettuce</p> 
-          <p>Mustard</p> 
-          <p>Onions</p>
-          <p>Pickles</p> 
-          <p>Tomato</p>
+          <div>
+            <div>
+              <label htmlFor="mayo">Mayo</label>
+              <input type="checkbox" name="mayo" />
+            </div>
+            <div>
+              <label htmlFor="ketchup">Ketchup</label>
+              <input type="checkbox" name="ketchup" />
+            </div>
+            <div>
+              <label htmlFor="lettuce">Lettuce</label>
+              <input type="checkbox" name="lettuce" />
+            </div>
+            <div>
+              <label htmlFor="mustard">Mustard</label>
+              <input type="checkbox" name="mustard" />
+            </div>
+            <div>
+              <label htmlFor="onions">Onions</label>
+              <input type="checkbox" name="onions" />
+            </div>
+            <div>
+              <label htmlFor="labelickles">labelickles</label>
+              <input type="checkbox" name="labelickles" />
+            </div>
+            <div>
+              <label htmlFor="tomato">Tomato</label>
+              <input type="checkbox" name="tomato" />
+            </div>
+          </div>
         </div>
         <button onClick={handlelocakStorage}>
           <Link href={`/${burgerName}/side/order`}>Order Now</Link>
