@@ -2,12 +2,22 @@
 import React, { useState, useEffect } from "react";
 import styless from "./Order.module.css";
 import Image from "next/image";
+import { checkout } from "@/app/lib/checkout";
 const OrderPage = () => {
   const [data, setData] = useState(null);
   useEffect(() => {
     setData(JSON.parse(localStorage.getItem("customeBurger")));
   }, []);
-
+  function handleOrder() {
+    checkout({
+      lineItems: [
+        {
+          price: "price_1P18yZAABUMF3wr59b8nS0kj",
+          quantity: 1,
+        },
+      ],
+    });
+  }
   return (
     <section className={styless.section}>
       <div>
@@ -54,7 +64,7 @@ const OrderPage = () => {
             </div>
           </div>
         )}
-        <button>Order Now</button>
+        <button onClick={handleOrder}>Order Now</button>
       </div>
     </section>
   );

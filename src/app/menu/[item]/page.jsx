@@ -1,8 +1,10 @@
+"use client";
 import React from "react";
 import styles from "./item.module.css";
 import { TiTick } from "react-icons/ti";
 import Image from "next/image";
 import AboutSection from "@/components/app components/AboutSection";
+import { checkout } from "@/app/lib/checkout";
 const menuList = [
   {
     imageUrl: "/images/menu/cheese-pizza.jpg",
@@ -53,7 +55,16 @@ const menuList = [
 const page = ({ params }) => {
   const paramsName = decodeURI(params.item);
   const menuObject = menuList.find((item) => item.name === paramsName);
-
+  function handleOrder() {
+    checkout({
+      lineItems: [
+        {
+          price: "price_1P18yZAABUMF3wr59b8nS0kj",
+          quantity: 1,
+        },
+      ],
+    });
+  }
   return (
     <section className={styles.section}>
       <div className={styles.card}>
@@ -115,7 +126,7 @@ const page = ({ params }) => {
             </div>
           </>
         )}
-        <button>Order</button>
+        <button onClick={handleOrder}>Order Now</button>
       </div>
       <AboutSection />
     </section>
